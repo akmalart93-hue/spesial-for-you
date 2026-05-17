@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Untuk Kamu, Cintaku di Seberang Jarak</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700;800&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<!-- Twemoji: render semua emoji jadi gambar SVG, dijamin ga kotak di device manapun -->
+<script src="https://cdn.jsdelivr.net/npm/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+<style>
+:root{
+  --pink-light:#fff0f5;--pink-mid:#ffc2d4;--pink-deep:#ff85a1;
+  --pink-hot:#ff5c8a;--rose:#e63970;--purple:#c471ed;
+  --blue-night:#1a1a3e;--text-dark:#3d1a2e;--text-mid:#7a3255;--white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--pink-light);min-height:100vh;overflow-x:hidden;}
+/* Twemoji images — size them like text */
+img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;display:inline-block;}
+.fb-emoji img.emoji{height:2rem;width:2rem;margin:0;}
+.reason-emoji img.emoji{height:2rem;width:2rem;margin:0;}
+.promise-check img.emoji{height:1rem;width:1rem;margin:0;}
+.pin-icon img.emoji{height:2.5rem;width:2.5rem;margin:0;}
+.plane-emoji img.emoji{height:1.3rem;width:1.3rem;margin:0;}
+.album-art img.emoji{height:1.6rem;width:1.6rem;margin:0;}
+.pl-emoji img.emoji{height:1.1rem;width:1.1rem;margin:0;}
+.heart-float img.emoji{height:1em;width:1em;margin:0;vertical-align:middle;}
+.confetti-piece img.emoji{height:1.4rem;width:1.4rem;margin:0;}
+.modal-emoji img.emoji{height:3.8rem;width:3.8rem;margin:0;}
+.footer-heart img.emoji{height:1em;width:1em;margin:0;vertical-align:middle;}
+.bubble img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.header-tag img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.msg-label img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.msg-body img.emoji,.msg-sign img.emoji,.msg-quote img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.section-title img.emoji,.section-sub img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.promise-text img.emoji,.reason-text img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.pol-caption img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.cd-lbl img.emoji,.dist-top img.emoji,.dist-nums img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.track-name img.emoji,.track-artist img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;}
+.heart-divider img.emoji{height:1.2rem;width:1.2rem;margin:0;}
+button img.emoji{height:1em;width:1em;margin:0 .05em;vertical-align:-.1em;pointer-events:none;}
+
+.bg-hearts{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;}
+.heart-float{position:absolute;bottom:-60px;animation:floatUp linear infinite;opacity:0;pointer-events:none;line-height:1;}
+.heart-float img{display:block;}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0deg);opacity:.7;}100%{transform:translateY(-110vh) rotate(360deg);opacity:0;}}
+
+/* DISTANCE BAR */
+.distance-bar{background:linear-gradient(135deg,#1a1a3e 0%,#2d1b69 50%,#3d1a2e 100%);color:white;text-align:center;padding:12px 20px;position:relative;z-index:20;overflow:hidden;}
+.distance-bar::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='white' opacity='.1'/%3E%3C/svg%3E");}
+.distance-inner{position:relative;z-index:1;}
+.dist-top{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-bottom:3px;}
+.dist-nums{font-family:'Playfair Display',serif;font-size:clamp(.95rem,3vw,1.4rem);color:#ffc2d4;}
+.stars-line{font-size:.85rem;margin-top:3px;letter-spacing:3px;opacity:.5;}
+
+/* HEADER */
+header{position:relative;z-index:10;text-align:center;padding:40px 20px 20px;background:linear-gradient(180deg,#ffe0ec 0%,transparent 100%);}
+.header-tag{display:inline-block;background:linear-gradient(135deg,var(--pink-hot),var(--purple));color:white;font-family:'Dancing Script',cursive;font-size:clamp(.85rem,2vw,1rem);padding:6px 20px;border-radius:50px;margin-bottom:12px;box-shadow:0 4px 20px rgba(196,113,237,.4);animation:bounce 2s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+header h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,7vw,4rem);color:var(--rose);line-height:1.1;text-shadow:3px 3px 0 rgba(255,133,161,.3);}
+header h1 span{font-style:italic;color:var(--pink-hot);}
+.subtitle{font-family:'Dancing Script',cursive;font-size:clamp(1rem,3vw,1.4rem);color:var(--text-mid);margin-top:8px;}
+.heart-divider{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px auto;color:var(--pink-deep);font-size:1.2rem;}
+.heart-divider::before,.heart-divider::after{content:'';display:block;width:clamp(50px,15vw,120px);height:2px;background:linear-gradient(90deg,transparent,var(--pink-deep));border-radius:2px;}
+.heart-divider::after{background:linear-gradient(90deg,var(--pink-deep),transparent);}
+
+/* LAYOUT */
+main{position:relative;z-index:5;max-width:960px;margin:0 auto;padding:0 16px 40px;}
+.card{background:white;border-radius:30px;padding:clamp(20px,5vw,40px);box-shadow:0 20px 60px rgba(255,92,138,.13),0 4px 20px rgba(0,0,0,.05);margin-bottom:28px;position:relative;overflow:hidden;}
+.card-dark{background:linear-gradient(135deg,#1a1a3e 0%,#3d1a2e 100%);border-radius:30px;padding:clamp(20px,5vw,40px);box-shadow:0 20px 60px rgba(26,26,62,.5);margin-bottom:28px;position:relative;overflow:hidden;color:white;}
+.section-title{font-family:'Dancing Script',cursive;font-size:clamp(1.4rem,4vw,2rem);color:var(--rose);text-align:center;margin-bottom:6px;}
+.section-title.light{color:var(--pink-mid);}
+.section-sub{text-align:center;color:var(--text-mid);font-size:.85rem;margin-bottom:24px;}
+.section-sub.light{color:rgba(255,194,212,.6);}
+
+/* CAROUSEL */
+.carousel-wrapper{position:relative;width:100%;overflow:hidden;}
+.carousel-track{display:flex;gap:16px;transition:transform .6s cubic-bezier(.25,.46,.45,.94);will-change:transform;}
+.polaroid{flex-shrink:0;background:white;padding:14px 14px 42px;box-shadow:0 8px 30px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06);border-radius:4px;position:relative;transition:transform .4s ease,box-shadow .4s ease;cursor:pointer;width:calc(50% - 8px);}
+@media(max-width:500px){.polaroid{width:calc(80% - 8px);}}
+@media(min-width:700px){.polaroid{width:calc(33.33% - 11px);}}
+.polaroid:hover{transform:rotate(0deg) scale(1.04) translateY(-8px)!important;box-shadow:0 24px 56px rgba(255,92,138,.3);z-index:10;}
+.polaroid:nth-child(odd){transform:rotate(-2.5deg);}
+.polaroid:nth-child(even){transform:rotate(2deg);}
+.pol-img{width:100%;aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:clamp(3rem,8vw,4.5rem);}
+.pol-caption{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:'Dancing Script',cursive;font-size:clamp(.78rem,2vw,.95rem);color:var(--text-mid);padding:0 8px;line-height:1.3;}
+.tape{position:absolute;width:50px;height:18px;background:rgba(255,210,230,.75);border-radius:3px;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);box-shadow:0 2px 6px rgba(0,0,0,.08);}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;}
+.carousel-btn{background:var(--pink-deep);color:white;border:none;width:40px;height:40px;border-radius:50%;font-size:1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(255,133,161,.4);flex-shrink:0;}
+.carousel-btn:hover{background:var(--rose);transform:scale(1.12);}
+.dots{display:flex;gap:8px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--pink-mid);cursor:pointer;transition:all .3s;}
+.dot.active{background:var(--rose);width:20px;border-radius:4px;}
+
+/* MESSAGE */
+.msg-label{display:inline-block;background:linear-gradient(135deg,var(--pink-hot),var(--rose));color:white;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px;}
+.msg-quote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3.5vw,1.8rem);color:var(--text-dark);line-height:1.6;margin-bottom:20px;font-style:italic;}
+.msg-quote::before{content:'\201C';color:var(--pink-deep);font-size:2em;line-height:0;vertical-align:-.4em;margin-right:4px;}
+.msg-quote::after{content:'\201D';color:var(--pink-deep);font-size:2em;line-height:0;vertical-align:-.4em;margin-left:4px;}
+.msg-body{font-size:clamp(.88rem,2.5vw,1.02rem);color:var(--text-mid);line-height:1.95;}
+.msg-body p{margin-bottom:14px;}
+.msg-sign{margin-top:20px;font-family:'Dancing Script',cursive;font-size:clamp(1.3rem,4vw,1.8rem);color:var(--rose);text-align:right;}
+
+/* FUN BUTTONS */
+.fun-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:14px;margin-bottom:0;}
+.fun-btn{background:white;border:2px solid rgba(255,133,161,.2);border-radius:22px;padding:18px 12px;text-align:center;cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(255,92,138,.08);font-family:'Nunito',sans-serif;outline:none;}
+.fun-btn:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 16px 40px rgba(255,92,138,.22);border-color:var(--pink-deep);}
+.fun-btn:active{transform:scale(.96);}
+.fun-btn .fb-emoji{font-size:2rem;display:block;margin-bottom:8px;transition:transform .3s;}
+.fun-btn:hover .fb-emoji{transform:scale(1.2) rotate(10deg);}
+.fun-btn .fb-label{font-size:.78rem;font-weight:700;color:var(--text-mid);}
+.fun-btn .fb-hint{font-size:.65rem;color:var(--pink-deep);margin-top:3px;opacity:.8;}
+
+/* BUBBLE POPUP */
+.bubble{position:fixed;z-index:9998;background:white;border-radius:20px;padding:14px 20px;box-shadow:0 20px 60px rgba(255,92,138,.3);font-family:'Nunito',sans-serif;font-size:clamp(.82rem,2vw,.95rem);color:var(--text-dark);max-width:min(310px,88vw);text-align:center;line-height:1.65;animation:bubblePop .4s cubic-bezier(.34,1.56,.64,1);border:2px solid var(--pink-mid);pointer-events:none;}
+@keyframes bubblePop{0%{opacity:0;transform:scale(.4) translateY(20px);}100%{opacity:1;transform:scale(1) translateY(0);}}
+.bubble-close{display:block;margin-top:10px;font-size:.72rem;color:var(--pink-hot);font-weight:700;pointer-events:auto;cursor:pointer;}
+
+/* REASONS */
+.reasons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,185px),1fr));gap:14px;}
+.reason-card{background:white;border-radius:20px;padding:20px 14px;text-align:center;box-shadow:0 6px 20px rgba(255,92,138,.1);transition:transform .3s ease,box-shadow .3s ease;border:1.5px solid rgba(255,133,161,.15);position:relative;overflow:hidden;cursor:pointer;}
+.reason-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink-deep),var(--rose));transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+.reason-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(255,92,138,.2);}
+.reason-card:hover::before{transform:scaleX(1);}
+.reason-emoji{font-size:2rem;margin-bottom:10px;display:block;}
+.reason-text{font-size:.86rem;color:var(--text-mid);line-height:1.5;font-weight:600;}
+
+/* PROMISE */
+.promise-list{display:flex;flex-direction:column;gap:12px;}
+.promise-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.06);border-radius:16px;padding:14px 16px;border:1px solid rgba(255,194,212,.15);cursor:pointer;transition:background .2s;}
+.promise-item:hover{background:rgba(255,133,161,.12);}
+.promise-check{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--pink-deep),var(--rose));display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;margin-top:2px;transition:transform .3s;}
+.promise-item:hover .promise-check{transform:scale(1.2) rotate(10deg);}
+.promise-text{font-size:clamp(.83rem,2vw,.93rem);line-height:1.65;color:rgba(255,255,255,.85);}
+
+/* COUNTDOWN */
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px;}
+.cd-box{background:rgba(255,92,138,.08);border-radius:16px;padding:14px 8px;text-align:center;border:1.5px solid rgba(255,133,161,.2);}
+.cd-num{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,5vw,2.2rem);color:var(--rose);font-weight:700;display:block;}
+.cd-lbl{font-size:.66rem;color:var(--text-mid);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+@media(max-width:400px){.countdown-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* MAP */
+.map-visual{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:16px;}
+.city-pin{text-align:center;cursor:pointer;transition:transform .3s;}
+.city-pin:hover{transform:translateY(-8px);}
+.pin-icon{font-size:2.5rem;display:block;animation:pinBounce 2s ease-in-out infinite;}
+.city-pin:nth-child(3) .pin-icon{animation-delay:.5s;}
+@keyframes pinBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.pin-name{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--rose);margin-top:4px;}
+.pin-line{flex:1;min-width:50px;max-width:110px;height:2px;background:repeating-linear-gradient(90deg,var(--pink-deep) 0,var(--pink-deep) 6px,transparent 6px,transparent 12px);position:relative;}
+.plane-emoji{position:absolute;top:-12px;left:20%;font-size:1.3rem;animation:flyPlane 3s ease-in-out infinite;}
+@keyframes flyPlane{0%,100%{left:15%;}50%{left:70%;}}
+
+/* MUSIC */
+.now-playing{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border-radius:20px;padding:16px 20px;margin-bottom:20px;border:1px solid rgba(255,133,161,.2);}
+.album-art{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--pink-deep),var(--rose));display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;animation:spinRecord 4s linear infinite paused;box-shadow:0 4px 20px rgba(255,92,138,.4);}
+.album-art.playing{animation-play-state:running;}
+@keyframes spinRecord{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+.track-info{flex:1;overflow:hidden;}
+.track-name{font-weight:700;font-size:clamp(.88rem,2.5vw,1.05rem);color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.track-artist{color:rgba(255,194,212,.8);font-size:.8rem;margin-top:2px;}
+.progress-bar{width:100%;height:5px;background:rgba(255,255,255,.15);border-radius:4px;overflow:hidden;cursor:pointer;margin-bottom:4px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--pink-deep),var(--rose));border-radius:4px;width:0%;transition:width .5s linear;}
+.progress-times{display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,194,212,.6);margin-bottom:4px;}
+.controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0;}
+.ctrl-btn{background:rgba(255,255,255,.1);border:none;color:var(--pink-mid);border-radius:50%;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;font-size:1rem;width:40px;height:40px;}
+.ctrl-btn:hover{background:rgba(255,255,255,.2);transform:scale(1.1);}
+.ctrl-btn.play-btn{width:54px;height:54px;background:linear-gradient(135deg,var(--pink-deep),var(--rose));color:white;font-size:1.3rem;box-shadow:0 6px 20px rgba(255,92,138,.5);}
+.ctrl-btn.play-btn:hover{transform:scale(1.08);}
+.volume-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.vol-slider{flex:1;-webkit-appearance:none;height:4px;background:rgba(255,255,255,.15);border-radius:4px;outline:none;cursor:pointer;}
+.vol-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--pink-deep);cursor:pointer;}
+.playlist{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.playlist-item{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;cursor:pointer;transition:background .2s;}
+.playlist-item:hover{background:rgba(255,255,255,.08);}
+.playlist-item.active{background:rgba(255,133,161,.2);border:1px solid rgba(255,133,161,.3);}
+.pl-num{width:22px;text-align:center;font-size:.78rem;color:rgba(255,194,212,.5);flex-shrink:0;}
+.playlist-item.active .pl-num{color:var(--pink-deep);font-weight:700;}
+.pl-emoji{font-size:1.1rem;flex-shrink:0;}
+.pl-info{flex:1;overflow:hidden;}
+.pl-track{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pl-artist{font-size:.75rem;color:rgba(255,194,212,.6);}
+.pl-dur{font-size:.75rem;color:rgba(255,194,212,.5);flex-shrink:0;}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;color:var(--text-mid);font-size:.85rem;position:relative;z-index:5;}
+.footer-heart{display:inline-block;color:var(--rose);animation:heartbeat 1.2s ease-in-out infinite;}
+@keyframes heartbeat{0%,100%{transform:scale(1);}14%{transform:scale(1.3);}28%{transform:scale(1);}42%{transform:scale(1.2);}70%{transform:scale(1);}}
+
+/* CONFETTI */
+.confetti-piece{position:fixed;pointer-events:none;z-index:9999;font-size:1.4rem;animation:confettiFall 2.2s ease forwards;}
+@keyframes confettiFall{0%{opacity:1;transform:translateY(0) rotate(0) scale(1);}100%{opacity:0;transform:translateY(280px) rotate(720deg) scale(.2);}}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(61,26,46,.75);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal-box{background:white;border-radius:30px;padding:clamp(24px,5vw,40px);max-width:min(500px,100%);width:100%;text-align:center;transform:scale(.85) translateY(30px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);position:relative;}
+.modal-overlay.open .modal-box{transform:scale(1) translateY(0);}
+.modal-close{position:absolute;top:14px;right:18px;font-size:1.4rem;cursor:pointer;color:var(--pink-deep);background:none;border:none;transition:transform .2s;}
+.modal-close:hover{transform:rotate(90deg) scale(1.2);}
+.modal-emoji{font-size:3.8rem;margin-bottom:12px;display:block;animation:bounce 1.5s ease-in-out infinite;}
+.modal-title{font-family:'Dancing Script',cursive;font-size:clamp(1.4rem,4vw,2rem);color:var(--rose);margin-bottom:10px;}
+.modal-text{color:var(--text-mid);line-height:1.8;font-size:clamp(.85rem,2.5vw,.98rem);}
+</style>
+</head>
+<body>
+
+<div class="bg-hearts" id="bgHearts"></div>
+
+<!-- TOP BAR -->
+<div class="distance-bar">
+  <div class="distance-inner">
+    <div class="dist-top">✈️ Jarak yang Tak Pernah Bisa Memisahkan Kita</div>
+    <div class="dist-nums">Tia &amp; Akmal — Beda Kota, Tapi Satu Hati ❤️</div>
+    <div class="stars-line">· · · ★ · · · ★ · · · ★ · · ·</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-tag">💌 Surat Cinta LDR Spesial Buat Kamu</div>
+  <h1>Terima Kasih,<br><span>Spesial For Fathiyya Salma Azizah</span> 💕</h1>
+  <p class="subtitle">Jarak itu nyata, tapi cintaku untukmu jauh lebih nyata ✨</p>
+  <div class="heart-divider">🌙</div>
+</header>
+
+<main>
+
+<!-- ALBUM -->
+<div class="card">
+  <h2 class="section-title">📷 Album Kenangan LDR Kita</h2>
+  <p class="section-sub">Foto-foto memorable yg aku ingat 🌙 · <em>Klik foto untuk pesan tersembunyi!</em></p>
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="polaroid" onclick="burstConfetti(event);showBubble(event,'Hari pertama kita video call... aku tau saat itu, kamu spesial banget 🌙💕')">
+        <div class="tape"></div>
+        <div class="pol-img" style="background:#1a1a3e;">
+          <img src="foto/foto1.jpg" alt="Kenangan 1" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" onerror="this.style.display='none';this.parentElement.innerHTML='🌙'">
+        </div>
+        <div class="pol-caption">Video call pertama kita 💻✨</div>
+      </div>
+      <div class="polaroid" onclick="burstConfetti(event);showBubble(event,'Waktu kamu kirim foto makanan yang kamu makan sendirian, aku pengen banget bisa duduk di sebelah kamu dan makan bareng 🍜💕')">
+        <div class="tape"></div>
+        <div class="pol-img" style="background:#fff3e0;">
+          <img src="foto/foto2.jpg" alt="Kenangan 2" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" onerror="this.style.display='none';this.parentElement.innerHTML='☕'">
+        </div>
+        <div class="pol-caption">Kirim foto makan buat aku 🍜</div>
+      </div>
+      <div class="polaroid" onclick="burstConfetti(event);showBubble(event,'Chat pagi sebelum kamu kerja — ucapan selamat pagi dari kamu adalah alarm terbaik yang pernah aku punya 🌅')">
+        <div class="tape"></div>
+        <div class="pol-img" style="background:#fff9c4;">
+          <img src="foto/foto3.jpg" alt="Kenangan 3" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" onerror="this.style.display='none';this.parentElement.innerHTML='🌅'">
+        </div>
+        <div class="pol-caption">Good morning sayang tiap hari ☀️</div>
+      </div>
+      <div class="polaroid" onclick="burstConfetti(event);showBubble(event,'vidio call sambil kerjain kerjaan masing masing, waktu itu serasa dunia cuma milik kita berdua')">
+        <div class="tape"></div>
+        <div class="pol-img" style="background:#e8eaf6;">
+          <img src="foto/foto4.jpg" alt="Kenangan 4" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" onerror="this.style.display='none';this.parentElement.innerHTML='🎬'">
+        </div>
+        <div class="pol-caption">Vidio call sambil kerja 🎥💕</div>
+      </div>
+      <div class="polaroid" onclick="burstConfetti(event);showBubble(event,'Pas kamu bilang &quot;aku kangen&quot; untuk pertama kali... jantungku loncat dan senyumku nggak bisa berhenti seharian 🥺💖')">
+        <div class="tape"></div>
+        <div class="pol-img" style="background:#fce4ec;">
+          <img src="foto/foto5.jpg" alt="Kenangan 5" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" onerror="this.style.display='none';this.parentElement.innerHTML='💌'">
+        </div>
+        <div class="pol-caption">Pertama kali kamu bilang kangen 🥺</div>
+      </div>
+      <div class="polaroid" onclick="burstConfetti(event);showBubble(event,'foto favorit aku yg selalu aku jadiin walpaper hp aku, yg bikin suasana harikumenjadi lebih cerah 🌸')">
+        <div class="tape"></div>
+        <div class="pol-img" style="background:#e8f5e9;">
+          <img src="foto/foto6.jpg" alt="Kenangan 6" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" onerror="this.style.display='none';this.parentElement.innerHTML='😴'">
+        </div>
+        <div class="pol-caption">Pap favorit dari kamu 📞🌙</div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button class="carousel-btn" onclick="moveCarousel(-1)">◀</button>
+    <div class="dots" id="dotsContainer"></div>
+    <button class="carousel-btn" onclick="moveCarousel(1)">▶</button>
+  </div>
+  <p style="text-align:center;font-size:.74rem;color:var(--text-mid);margin-top:10px;">💡 Klik tiap foto — ada pesan tersembunyi! 🤫</p>
+</div>
+
+<!-- FUN BUTTONS -->
+<div class="card">
+  <h2 class="section-title">🎮 Tombol-Tombol Ajaib!</h2>
+  <p class="section-sub">Pencet semuanya — dijamin bikin senyum 😄 · Tiap tombol beda kejutannya!</p>
+  <div class="fun-grid">
+    <button class="fun-btn" onclick="funAction('hug',event)">
+      <span class="fb-emoji">🤗</span>
+      <div class="fb-label">Kirim Pelukan</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('kiss',event)">
+      <span class="fb-emoji">😘</span>
+      <div class="fb-label">Kirim Ciuman</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('miss',event)">
+      <span class="fb-emoji">🥺</span>
+      <div class="fb-label">Lagi Kangen</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('compliment',event)">
+      <span class="fb-emoji">🌟</span>
+      <div class="fb-label">Pujian Untukmu</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('joke',event)">
+      <span class="fb-emoji">😂</span>
+      <div class="fb-label">Jokes LDR</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('quote',event)">
+      <span class="fb-emoji">💬</span>
+      <div class="fb-label">Kata Romantis</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('stars',event)">
+      <span class="fb-emoji">🌠</span>
+      <div class="fb-label">Bintang Kita</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('dream',event)">
+      <span class="fb-emoji">✈️</span>
+      <div class="fb-label">Mimpi Kita</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('snack',event)">
+      <span class="fb-emoji">🍜</span>
+      <div class="fb-label">Makan Bareng</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="openModal('lovetest')">
+      <span class="fb-emoji">💘</span>
+      <div class="fb-label">Love Meter!</div>
+      <div class="fb-hint">Buka hasilnya!</div>
+    </button>
+    <button class="fun-btn" onclick="openModal('bucket')">
+      <span class="fb-emoji">📋</span>
+      <div class="fb-label">Bucket List LDR</div>
+      <div class="fb-hint">Rencana kita!</div>
+    </button>
+    <button class="fun-btn" onclick="openModal('reason')">
+      <span class="fb-emoji">💡</span>
+      <div class="fb-label">Kenapa Suka Kamu</div>
+      <div class="fb-hint">Penasaran?</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('goodnight',event)">
+      <span class="fb-emoji">🌙</span>
+      <div class="fb-label">Ucapan Malam</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('morning',event)">
+      <span class="fb-emoji">☀️</span>
+      <div class="fb-label">Good Morning!</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="openModal('ldrfact')">
+      <span class="fb-emoji">🔬</span>
+      <div class="fb-label">Fakta LDR Ilmiah</div>
+      <div class="fb-hint">Serius lho!</div>
+    </button>
+    <button class="fun-btn" onclick="openModal('horoscope')">
+      <span class="fb-emoji">🔮</span>
+      <div class="fb-label">Ramalan Cinta</div>
+      <div class="fb-hint">Cek nasib kita!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('cheer',event)">
+      <span class="fb-emoji">📣</span>
+      <div class="fb-label">Semangat Kamu!</div>
+      <div class="fb-hint">Pencet aku!</div>
+    </button>
+    <button class="fun-btn" onclick="openModal('memory')">
+      <span class="fb-emoji">🎞️</span>
+      <div class="fb-label">Memory LDR</div>
+      <div class="fb-hint">Kita punya ini!</div>
+    </button>
+    <button class="fun-btn" onclick="funAction('random',event)">
+      <span class="fb-emoji">🎲</span>
+      <div class="fb-label">Random Sayang!</div>
+      <div class="fb-hint">Surprise!</div>
+    </button>
+    <button class="fun-btn" id="secretBtn" onclick="secretAction(event)">
+      <span class="fb-emoji">🔐</span>
+      <div class="fb-label">Tombol Rahasia</div>
+      <div class="fb-hint">Jangan pencet!</div>
+    </button>
+  </div>
+</div>
+
+<!-- SURAT CINTA -->
+<div class="card" style="border:2px solid rgba(255,133,161,.15);">
+  <div class="msg-label">💌 Dari Hati yang Merindukanmu Setiap Detik</div>
+  <div class="msg-quote">LDR bukan tentang seberapa jauh jaraknya — tapi tentang seberapa kuat cintanya buat terus bertahan.</div>
+  <div class="msg-body">
+    <p>Hai kamu, si pemilik senyum yang aku rindukan setiap harinya dari jauh. Aku nggak tau gimana caranya menjelaskan perasaan ini — perasaan yang aneh tapi indah banget. Gimana bisa seseorang yang jaraknya ratusan kilometer bisa terasa begitu dekat di hati?</p>
+    <p>Setiap malam waktu aku matiin lampu dan tiduran, yang pertama aku pikirin adalah kamu. Gimana harimu tadi? Udah makan belum? Capek nggak? Pertanyaan-pertanyaan sepele yang kadang aku simpan sendiri, tapi selalu ada di benakku.</p>
+    <p>Yang bikin aku semakin sayang sama kamu adalah — kamu nggak pernah bikin jarak ini terasa berat. Kamu selalu ada walau cuma lewat layar. Kamu selalu usaha. Dan itu lebih dari cukup buat aku. <em>Kamu lebih dari cukup buat aku. 💕</em></p>
+    <p>Terima kasih udah milih untuk tetap ada meskipun ini nggak mudah. Terima kasih udah percaya bahwa nanti kita bakal ketemu lagi — dan saat itu, aku janji pelukan pertamaku nggak akan pernah berakhir. <strong>Sampai ketemu ya, sayang. Semua ini worth it. 🌙</strong></p>
+  </div>
+  <div class="msg-sign">Selalu merindukanmu, Cowokmu yang jauh 🌹</div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="card">
+  <h2 class="section-title">⏳ Countdown Ketemu Lagi</h2>
+  <p class="section-sub">Setiap detik berlalu adalah selangkah lebih dekat ke harimu 💕</p>
+  <div class="countdown-grid">
+    <div class="cd-box"><span class="cd-num" id="cd-d">--</span><div class="cd-lbl">Hari</div></div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">--</span><div class="cd-lbl">Jam</div></div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">--</span><div class="cd-lbl">Menit</div></div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">--</span><div class="cd-lbl">Detik</div></div>
+  </div>
+  <p style="text-align:center;margin-top:16px;font-size:.8rem;color:var(--text-mid);">
+    🗓️ Target: <strong id="meetDateLabel">Belum ditentukan</strong>
+    <button onclick="openModal('setdate')" style="margin-left:8px;background:var(--pink-hot);color:white;border:none;border-radius:12px;padding:5px 14px;font-size:.75rem;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;">Atur Tanggal 💕</button>
+  </p>
+</div>
+
+<!-- MAP -->
+<div class="card" style="background:linear-gradient(135deg,#fff0f5,#f0f4ff);">
+  <h2 class="section-title">🗺️ Kamu Di Sana, Aku Di Sini</h2>
+  <p class="section-sub">Beda kota beda langit, tapi kita lihat bintang yang sama 🌟 · <em>Klik pin kotanya!</em></p>
+  <div class="map-visual">
+    <div class="city-pin" onclick="showBubble(event,'Ini kotamu Bekasi — tempat kamu bangun pagi, tempat kamu berjuang setiap hari. Aku selalu kirimkan doa ke arah sana setiap malam 🌙💕')">
+      <span class="pin-icon">📍</span>
+      <div class="pin-name">Bekasi</div>
+    </div>
+    <div class="pin-line"><div class="plane-emoji">✈️</div></div>
+    <div class="city-pin" onclick="showBubble(event,'Ini kotaku Magelang — tapi rasanya belum lengkap tanpa kamu di sini. Nunggu hari di mana kita bisa jalan bareng di sini 🍜💕')">
+      <span class="pin-icon">🏠</span>
+      <div class="pin-name">Magelang</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALASAN -->
+<div class="card">
+  <h2 class="section-title">💝 Hal-Hal Kecil yang Bikin Aku Makin Cinta</h2>
+  <p class="section-sub">Walau jauh, ini yang aku notice dari kamu ✨ · <em>Klik setiap kartu!</em></p>
+  <div class="reasons-grid">
+    <div class="reason-card" onclick="burstConfetti(event);showBubble(event,'Cara kamu ketawa waktu voice note — suaranya selalu bikin hari-hariku hangat banget!')">
+      <span class="reason-emoji">😂</span>
+      <div class="reason-text">Suara tawamu yang hangat bahkan lewat voice note</div>
+    </div>
+    <div class="reason-card" onclick="burstConfetti(event);showBubble(event,'Kamu selalu inget hal-hal kecil yang aku ceritain. Itu artinya kamu beneran dengerin aku. Dan itu berarti dunia buat aku 💕')">
+      <span class="reason-emoji">🧠</span>
+      <div class="reason-text">Selalu ingat hal kecil yang aku ceritain</div>
+    </div>
+    <div class="reason-card" onclick="burstConfetti(event);showBubble(event,'Pagi-pagi kamu udah kirim pesan. Artinya di detik pertama bangun, kamu mikirin aku. Itu romantis banget 🌅')">
+      <span class="reason-emoji">🌅</span>
+      <div class="reason-text">Selalu good morning duluan meski beda jam tidur</div>
+    </div>
+    <div class="reason-card" onclick="burstConfetti(event);showBubble(event,'Kamu sabar banget sama aku yang kadang moody tiba-tiba. Thanks udah nggak pernah nyerah ya 🥺')">
+      <span class="reason-emoji">🕊️</span>
+      <div class="reason-text">Sabar menghadapi aku yang moody tanpa komplain</div>
+    </div>
+    <div class="reason-card" onclick="burstConfetti(event);showBubble(event,'Waktu kamu nangis dan cerita ke aku — kamu percaya aku. Dan aku nggak akan pernah sia-siakan kepercayaan itu 💪')">
+      <span class="reason-emoji">💪</span>
+      <div class="reason-text">Kuat di depanku tapi mau jujur waktu rapuh</div>
+    </div>
+    <div class="reason-card" onclick="burstConfetti(event);showBubble(event,'Kamu nggak pernah bikin jarak ini jadi alasan. Kamu selalu usaha. Itu yang bikin aku yakin kamu worth it diperjuangin 🔥')">
+      <span class="reason-emoji">✈️</span>
+      <div class="reason-text">Nggak pernah jadikan jarak sebagai alasan menyerah</div>
+    </div>
+  </div>
+</div>
+
+<!-- JANJI LDR -->
+<div class="card-dark">
+  <h2 class="section-title light">🤝 Janji-Janji Kecil Kita</h2>
+  <p class="section-sub light">Yang aku pegang erat walau jarak memisahkan · <em>Klik satu-satu!</em></p>
+  <div class="promise-list">
+    <div class="promise-item" onclick="burstConfetti(event);showBubble(event,'Aku janji nggak akan tidur sebelum bilang good night ke kamu, seburuk apapun hariku. Karena suaramu adalah obat terbaik 🌙')">
+      <div class="promise-check">🌙</div>
+      <div class="promise-text">Selalu bilang good night sebelum tidur, apapun yang terjadi</div>
+    </div>
+    <div class="promise-item" onclick="burstConfetti(event);showBubble(event,'Kalau aku lagi nggak baik-baik aja, aku janji cerita ke kamu. Bukan karena lemah, tapi karena kamu adalah rumahku 🏠')">
+      <div class="promise-check">💬</div>
+      <div class="promise-text">Cerita waktu susah, bukan pura-pura baik-baik aja</div>
+    </div>
+    <div class="promise-item" onclick="burstConfetti(event);showBubble(event,'Jarak ini sementara. Dan aku janji nggak akan berhenti usaha sampai kita bisa ketemu lagi ✈️')">
+      <div class="promise-check">✈️</div>
+      <div class="promise-text">Terus usaha untuk ketemu secepatnya</div>
+    </div>
+    <div class="promise-item" onclick="burstConfetti(event);showBubble(event,'Waktu kita akhirnya ketemu — aku janji memelukmu erat dan nggak mau lepas. Semua pelukan tertunda akan aku bayar lunas 🤗')">
+      <div class="promise-check">🤗</div>
+      <div class="promise-text">Memelukmu erat-erat waktu akhirnya ketemu nanti</div>
+    </div>
+    <div class="promise-item" onclick="burstConfetti(event);showBubble(event,'Aku janji untuk terus milih kamu setiap harinya. Bukan terpaksa — tapi karena kamu memang yang aku mau. Selalu 💕')">
+      <div class="promise-check">💕</div>
+      <div class="promise-text">Terus milih kamu setiap hari, hari demi hari</div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<div class="card-dark">
+  <h2 class="section-title light">🎶 Playlist Malam LDR Kita</h2>
+  <p class="section-sub light">Lagu buat menemani malam-malam kita yang jauh ✨</p>
+  <div class="now-playing">
+    <div class="album-art" id="albumArt">🎵</div>
+    <div class="track-info">
+      <div class="track-name" id="trackName">Pilih lagu dulu ya sayang...</div>
+      <div class="track-artist" id="trackArtist">Playlist LDR Spesial 💕</div>
+    </div>
+  </div>
+  <div class="progress-bar" onclick="seekTrack(event)">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <div class="progress-times">
+    <span id="timeNow">0:00</span>
+    <span id="timeEnd">0:00</span>
+  </div>
+  <div class="controls">
+    <button class="ctrl-btn" onclick="prevTrack()">⏮</button>
+    <button class="ctrl-btn play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+    <button class="ctrl-btn" onclick="nextTrack()">⏭</button>
+  </div>
+  <div class="volume-row">
+    <span>🔈</span>
+    <input type="range" class="vol-slider" id="volSlider" min="0" max="1" step="0.01" value="0.7" oninput="setVolume(this.value)">
+    <span>🔊</span>
+  </div>
+  <ul class="playlist" id="playlistEl"></ul>
+  <p style="text-align:center;font-size:.7rem;color:rgba(255,194,212,.4);margin-top:14px;">🎵 File MP3 lokal · Taruh di folder <code style="background:rgba(255,255,255,.1);padding:2px 6px;border-radius:4px;">audio/</code></p>
+</div>
+
+</main>
+
+<footer>
+  Dibuat khusus untukmu, cintaku yang jauh di sana<br>
+  Dengan <span class="footer-heart">❤️</span> yang nggak pernah berkurang meski terpisah jarak<br>
+  <small style="opacity:.5;">Setiap piksel di sini penuh rindu yang tulus 💌</small>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalIf(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <span class="modal-emoji" id="modalEmoji">💕</span>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-text" id="modalText"></div>
+  </div>
+</div>
+
+<script>
+// =============================================
+// =============================================
+// FLOATING SHAPES — pure CSS/SVG, zero CDN
+// Shapes: heart, star, circle, petal, diamond
+// =============================================
+const floatShapes = [
+  // merah muda — hati
+  `<svg width="18" height="18" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#ff85a1"/></svg>`,
+  // pink — hati
+  `<svg width="18" height="18" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#ff5c8a"/></svg>`,
+  // rose — hati kecil
+  `<svg width="14" height="14" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#e63970"/></svg>`,
+  // ungu muda — hati
+  `<svg width="16" height="16" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#d4a0ff"/></svg>`,
+  // bintang — kuning
+  `<svg width="18" height="18" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#ffd700"/></svg>`,
+  // bintang — pink
+  `<svg width="14" height="14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#ffb3c6"/></svg>`,
+  // lingkaran — pink
+  `<svg width="12" height="12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="#ffc2d4"/></svg>`,
+  // lingkaran — rose
+  `<svg width="10" height="10" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="#ff85a1"/></svg>`,
+  // kelopak / oval miring
+  `<svg width="14" height="20" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg"><ellipse cx="30" cy="45" rx="25" ry="42" fill="#ffb3c6" transform="rotate(-20 30 45)"/></svg>`,
+  // diamond
+  `<svg width="14" height="18" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 95,50 50,125 5,50" fill="#ff85a1"/></svg>`,
+  // sparkle / plus miring
+  `<svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 58,42 95,50 58,58 50,95 42,58 5,50 42,42" fill="#ffe0ec"/></svg>`,
+  // hati outline
+  `<svg width="18" height="18" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="none" stroke="#ff5c8a" stroke-width="6"/></svg>`,
+];
+
+function svgToDataUrl(svg){
+  return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+}
+
+function spawnHeart(){
+  const el = document.createElement('div');
+  el.className = 'heart-float';
+  const svg = floatShapes[Math.floor(Math.random() * floatShapes.length)];
+  const img = document.createElement('img');
+  img.src = svgToDataUrl(svg);
+  img.style.cssText = 'display:block;width:auto;height:auto;';
+  el.appendChild(img);
+  el.style.left = Math.random() * 100 + 'vw';
+  el.style.animationDuration = (9 + Math.random() * 10) + 's';
+  el.style.animationDelay = Math.random() * 3 + 's';
+  document.getElementById('bgHearts').appendChild(el);
+  setTimeout(() => el.remove(), 22000);
+}
+setInterval(spawnHeart, 1100);
+for(let i = 0; i < 10; i++) setTimeout(spawnHeart, i * 300);
+
+// =============================================
+// CONFETTI — pure SVG inline, zero CDN
+// =============================================
+const confettiShapes = [
+  `<svg width="20" height="20" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#ff5c8a"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#ff85a1"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg"><path d="M50 85 C50 85 5 55 5 28 C5 10 18 2 30 2 C39 2 47 7 50 13 C53 7 61 2 70 2 C82 2 95 10 95 28 C95 55 50 85 50 85Z" fill="#e63970"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#ffd700"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#ffb3c6"/></svg>`,
+  `<svg width="18" height="18" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="#ffc2d4"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 58,42 95,50 58,58 50,95 42,58 5,50 42,42" fill="#ff85a1"/></svg>`,
+  `<svg width="16" height="22" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg"><ellipse cx="30" cy="45" rx="25" ry="42" fill="#d4a0ff" transform="rotate(-20 30 45)"/></svg>`,
+  `<svg width="20" height="20" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 95,50 50,125 5,50" fill="#ff5c8a"/></svg>`,
+];
+
+function burstConfetti(e){
+  for(let i = 0; i < 14; i++){
+    const c = document.createElement('div');
+    c.className = 'confetti-piece';
+    const svg = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
+    const img = document.createElement('img');
+    img.src = svgToDataUrl(svg);
+    img.style.cssText = 'width:1.4rem;height:1.4rem;display:block;';
+    c.appendChild(img);
+    c.style.left = (e.clientX + (Math.random() - .5) * 100) + 'px';
+    c.style.top  = (e.clientY + (Math.random() - .5) * 100) + 'px';
+    c.style.animationDelay = (Math.random() * .4) + 's';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 2500);
+  }
+}
+
+// BUBBLE
+let activeBubble=null;
+function showBubble(e,msg){
+  if(activeBubble)activeBubble.remove();
+  const b=document.createElement('div');
+  b.className='bubble';
+  b.innerHTML=msg+'<span class="bubble-close" onclick="this.parentElement.remove()">✕ Tutup</span>';
+  const bw=Math.min(310,window.innerWidth*0.88);
+  let x=e.clientX-bw/2;
+  x=Math.max(10,Math.min(x,window.innerWidth-bw-10));
+  let y=e.clientY-140;
+  y=Math.max(10,y);
+  b.style.left=x+'px';
+  b.style.top=y+'px';
+  document.body.appendChild(b);
+  twemoji.parse(b);
+  activeBubble=b;
+  setTimeout(()=>{if(b.parentElement)b.remove();activeBubble=null;},6000);
+}
+
+// FUN DATA
+const funData={
+  hug:[
+    '🤗 VIRTUAL HUG DIKIRIM! Bayangin: tanganku memeluk bahumu erat-erat, dagu aku di atas kepalamu, dan kita diem aja nggak ngomong apa-apa. Karena kadang pelukan lebih bicara dari kata-kata. 💕',
+    '🤗 WHOOOOSH! Pelukan hangat melayang sejauh apapun jaraknya! Semoga kamu ngerasain kehangatannya ya sayang! Nanti pas ketemu, aku pastiin ini jadi kenyataan 🥺',
+    '🤗 Satu pelukan dari aku untuk menemani harimu! Anggep aja nyata — karena perasaannya memang nyata 💖'
+  ],
+  kiss:[
+    '😘 MUA! Ciuman di dahi yang aku kirimkan dari jauh. Semoga nyampe ya! Kalau kamu senyum baca ini, artinya nyampe 😄💕',
+    '😘 Satu ciuman di pipi kanan, satu di pipi kiri, satu di dahi — biar hari kamu penuh rasa disayang! ✨',
+    '😘 *mengirimkan ciuman lewat angin malam* Semoga anginnya nyampe ke sana. Percaya aja, alam semesta pasti nganterin 🌙'
+  ],
+  miss:[
+    '🥺 KANGEN BANGET TAU NGGAK SIH! Kadang aku lagi ngerjain sesuatu terus tiba-tiba kepikiran kamu dan senyum sendiri. Orang di sekitar pasti heran 😅💕',
+    '🥺 Level kangen aku ke kamu hari ini: 10/10. Tapi 10 masih kurang, jadi skalanya aku ubah jadi 100 — dan jawabannya tetap 100. 😭💖',
+    '🥺 Kangen itu lucu ya — bikin sakit tapi juga bikin bahagia. Kangen kamu tuh kayak gitu persis. Sakit karna jauh, bahagia karna artinya aku peduli 🌸'
+  ],
+  compliment:[
+    '🌟 Cara kamu ketawa itu selalu bikin hari aku lebih cerah. Bahkan suara tawamu di voice note udah cukup bikin aku senyum seharian! 💫',
+    '🌟 Kamu luar biasa. Bukan karena sempurna — tapi karena kamu terus berjuang setiap harinya, dan itu jauh lebih keren dari sempurna. 💪✨',
+    '🌟 Kamu itu cantiknya masuk ke hati, bukan cuma ke mata. Dan itu yang bikin aku nggak bisa berhenti suka. 🥺💕',
+    '🌟 Dari semua orang yang pernah aku temui, kamu yang paling bikin aku ngerasa: hidup ini nggak se-berat itu ternyata. Makasih ya. 🌸'
+  ],
+  joke:[
+    '😂 Kenapa LDR itu kayak WiFi? — Sinyalnya kadang kuat kadang lemah, tapi kalau udah connect nggak ada yang mau disconnect! 🔗💕',
+    '😂 LDR susahnya: nggak bisa pelukan. Enaknya: punya waktu ekstra buat ngurus diri sendiri. Tapi susahnya tetap lebih berat 500x daripada enaknya 😅🥺',
+    '😂 Jarak bukan halangan — kata orang yang belum pernah nunggu chat di-read doang 3 jam. Tapi tetep kita kuat! 💪😂',
+    '😂 Aku sama kamu kayak charger sama HP. Kalau jauh, baterainya mati. Kalau deket, langsung full dan happy! 🔋💕'
+  ],
+  quote:[
+    '💬 Cinta sejati bukan soal seberapa dekat jaraknya — tapi seberapa dekat kalian satu sama lain walau jarak memisahkan. 🌙',
+    '💬 Aku nggak takut sama jarak. Aku takut kalau hari-hari tanpa kamu jadi terasa biasa. 💕',
+    '💬 LDR mengajarkan bahwa cinta bertahan bukan karena kenyamanan, tapi karena komitmen dan kepercayaan. ✨',
+    '💬 Beda kota, beda waktu — tapi kita lihat bulan yang sama setiap malam. Itu cukup untuk sementara. 🌕'
+  ],
+  stars:[
+    '🌠 Malam ini, lihat ke langit. Bintang yang kamu lihat adalah bintang yang sama yang aku lihat dari sini. Kita berbagi langit yang sama. Itu artinya kita nggak pernah benar-benar terpisah. 💕',
+    '🌠 Coba deh, malam ini cari bintang paling terang. Itu bintang kita. Kalau kangen, lihat ke sana — aku pasti lagi ngeliat hal yang sama dari sini. 🌙',
+    '🌠 Bintang itu jaraknya jutaan tahun cahaya, tapi kita masih bisa liat cahayanya. Cinta juga gitu — nggak peduli jaraknya, cahayanya selalu nyampe. ✨'
+  ],
+  dream:[
+    '✈️ Mimpi kita: jalan-jalan ke tempat yang selalu pengin kita kunjungi — makan di pinggir jalan, ketawa-ketawa, foto polaroid, nggak mikirin jarak lagi. Itu akan terjadi. 🌍💕',
+    '✈️ Suatu hari kita bakal duduk di kota yang sama, nonton sunset bareng, dan kamu bilang akhirnya ya. Dan aku senyum bilang iya, akhirnya. 🌅',
+    '✈️ Mimpi kecil aku: bisa bangun pagi dan kamu ada di sebelah aku. Nggak butuh yang mewah. Cukup itu aja. Dan aku yakin itu bukan mimpi — itu rencana. 🌸'
+  ],
+  snack:[
+    '🍜 Kalau kita bisa makan bareng sekarang, aku mau kita makan di warung kecil pinggir jalan — pake tangan, sambil becandaan, nggak ada yang difoto buat Instagram. Just us. 💕',
+    '🍜 Suatu hari nanti aku mau masakin kamu. Entah enak entah nggak — yang penting itu dari tanganku sendiri. Dan kamu harus bilang enak ya walaupun gosong 😂💕',
+    '🍜 Sayang, udah makan belum hari ini? Jangan lupa makan ya! Aku khawatirin kamu dari jauh nih 🥺 Nanti kalau ketemu, aku traktir makan sepuasnya! 🎉'
+  ],
+  goodnight:[
+    '🌙 Selamat tidur ya sayang. Semoga mimpimu indah, dan kalau kamu mimpi aku — anggap aja itu aku beneran dateng untuk nganter kamu tidur. Peluk gulingnya kuat-kuat ya 🤗💕',
+    '🌙 Good night, cintaku. Di kota yang berbeda, di bawah langit yang sama, aku juga tutup mata sambil bayangin kamu. Semoga besok hari kamu jauh lebih baik dari hari ini ✨',
+    '🌙 Istirahat yang baik ya. Besok aku masih di sini, masih sayang kamu, masih kangen kamu. Nggak kemana-mana kok. Sweet dreams, sayangku 💖'
+  ],
+  morning:[
+    '☀️ GOOD MORNING SAYANG! Hari ini kamu akan baik-baik aja. Aku kirimkan semangat dari jauh — semoga hari ini jadi salah satu hari terbaik kamu. Udah sarapan belum? 🥺🍳',
+    '☀️ Selamat pagi! Ingat ya hari ini: kamu kuat, kamu cantik, dan ada seseorang di kota lain yang selalu memikirkanmu setiap paginya. Semangat yaaa! 🌸💪',
+    '☀️ Pagi-pagi aku udah kangen kamu. Aneh banget kan? Tapi ya emang gitu rasanya. Semoga hari ini kamu senyum banyak-banyak. Kalau ada yang bikin kamu marah, inget: aku sayang kamu! 💕'
+  ],
+  cheer:[
+    '📣 SEMANGAT KAMU! Apapun yang lagi kamu hadapin hari ini, kamu pasti bisa. Kamu udah buktiin berkali-kali bahwa kamu kuat. Dan aku selalu ada di belakang kamu — bahkan dari jauh! 💪🔥',
+    '📣 Hei! Kamu nggak sendirian ya. Setiap kali kamu ngerasa capek dan pengen nyerah, inget ada aku yang terus support kamu dari sini. You got this, sayang! ✨💕',
+    '📣 Aku percaya kamu! 100%. Penuh. Bulat. Tanpa syarat. Apapun goals kamu, apapun impianmu — aku yang paling keras tepuk tangannya dari sini! FIGHTING! 🎉💖'
+  ],
+  random:[
+    '🎲 SURPRISE! Tau nggak, setiap kali HP aku bunyi dan itu kamu — senyumku otomatis keluar sendiri. Kayak refleks. Kamu itu efek samping kebahagiaan yang nggak bisa aku kontrol 😊💕',
+    '🎲 Fact random: aku paling senang waktu kamu lagi excited cerita sesuatu. Suaramu, caramu, antusiasmenya — itu bagian dari kamu yang aku cinta banget 💫',
+    '🎲 Kalau jarak ini bisa aku ukur pakai rindu, mungkin jaraknya udah jauh melampaui kota — melampaui dimensi! Karena kangen aku ke kamu rasanya nggak ada batasnya 🌌💕',
+    '🎲 Aku punya teori: kamu kirim pesan ke aku tepat saat aku lagi kepikiran kamu. Kebetulan? Nggak. Itu namanya koneksi jiwa. Kita emang sefrekuensi 📡💖'
+  ]
+};
+
+let secretClickCount = 0;
+function secretAction(e) {
+  secretClickCount++;
+  burstConfetti(e);
+  const secrets = [
+    '🔐 Kamu nekat pencet juga ya! Oke oke, ini rahasia terbesarku: aku sering re-read chat kita dari awal waktu kangen parah. Dan aku nggak pernah bosen. 🥺💕',
+    '🔓 Rahasia ke-2: Kadang aku screenshot foto profilmu cuma buat dipandangin. Creepy? Mungkin. Tapi itu bukti betapa sukanya aku sama kamu 😅💖',
+    '💌 Rahasia ke-3: Setiap kali aku bilang iya aku baik-baik aja — itu berarti aku lagi kangen kamu banget tapi nggak mau bikin kamu khawatir 🌙',
+    '🌟 Rahasia FINAL: Dari semua hal di dunia ini, yang paling aku syukuri adalah keputusanku untuk mulai percaya sama kamu. Itu keputusan terbaik dalam hidupku. I love you. 💕✨'
+  ];
+  const idx = Math.min(secretClickCount - 1, secrets.length - 1);
+  showBubble(e, secrets[idx]);
+  if(secretClickCount >= secrets.length) {
+    const btn = document.getElementById('secretBtn');
+    btn.querySelector('.fb-emoji').textContent = '💝';
+    btn.querySelector('.fb-label').textContent = 'Semua Rahasia!';
+    btn.querySelector('.fb-hint').textContent = 'I love you! 💕';
+    twemoji.parse(btn);
+  }
+}
+
+function funAction(type,e){
+  burstConfetti(e);
+  const msgs=funData[type];
+  showBubble(e,msgs[Math.floor(Math.random()*msgs.length)]);
+}
+
+// MODAL
+const modals={
+  lovetest:{
+    emoji:'💘',title:'Love Meter Kita!',
+    text:`Hasil perhitungan super akurat (sangat ilmiah 😂):<br><br>
+    💕 Rasa sayang: <strong>∞ / 100</strong><br>
+    🌙 Rindu: <strong>999,999 / 10</strong><br>
+    🤗 Pelukan yang tertunda: <strong>Tidak terhitung</strong><br>
+    ✈️ Kemungkinan LDR ini berhasil: <strong>100%</strong><br>
+    💪 Kekuatan cinta kita: <strong>Melampaui batas logika</strong><br><br>
+    <em>Karena kita milih satu sama lain setiap harinya. Dan itu cukup. 💖</em>`
+  },
+  bucket:{
+    emoji:'📋',title:'Bucket List LDR Kita!',
+    text:`Yang pengen kita lakuin pas ketemu nanti:<br><br>
+    ☕ Ngopi bareng di kafe yang cozy<br>
+    🎬 Nonton di bioskop (akhirnya bisa bareng!)<br>
+    🍜 Makan di warung pinggir jalan<br>
+    📸 Foto polaroid berduaan<br>
+    🌅 Liat sunset dari tempat tinggi<br>
+    🚶 Jalan-jalan tanpa tujuan sambil ngobrol<br>
+    😴 Ketiduran sambil duduk bareng<br>
+    🎪 Pergi ke tempat yang belum pernah kita datengin<br><br>
+    <em>Satu per satu pasti tercapai ya sayang 💕</em>`
+  },
+  reason:{
+    emoji:'💡',title:'Kenapa Aku Suka Kamu?',
+    text:`Penasaran? Ini jawabannya:<br><br>
+    Bukan karena kamu sempurna. Bukan karena kamu selalu bisa ada.<br>
+    Bukan karena LDR ini mudah.<br><br>
+    Tapi karena di antara semua orang yang pernah aku kenal, <strong>kamu adalah satu-satunya yang bikin aku ngerasa bahwa jarak ribuan kilometer pun worth it untuk dijalani.</strong><br><br>
+    Dan itu jauh lebih dari cukup. Kamu lebih dari cukup. 💕🌙`
+  },
+  setdate:{
+    emoji:'📅',title:'Set Tanggal Ketemu!',
+    text:`<input type="date" id="meetDateInput" style="padding:10px 16px;border-radius:12px;border:2px solid #ffc2d4;font-family:'Nunito',sans-serif;font-size:1rem;color:#3d1a2e;margin:10px 0;display:block;width:100%;outline:none;">
+    <button onclick="setMeetDate()" style="background:linear-gradient(135deg,#ff85a1,#e63970);color:white;border:none;border-radius:14px;padding:10px 24px;font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:8px;width:100%;">💕 Simpan Tanggal!</button>
+    <p style="font-size:.78rem;color:#7a3255;margin-top:10px;">Setiap detik sejak sekarang adalah countdown menuju hari itu 🌙</p>`
+  },
+  ldrfact:{
+    emoji:'🔬',title:'Fakta LDR yang Mengejutkan!',
+    text:`Penelitian ilmiah membuktikan (serius ini beneran):<br><br>
+    📊 <strong>Pasangan LDR lebih intens berkomunikasi</strong> dan seringkali lebih jujur satu sama lain.<br><br>
+    🧠 <strong>Kerinduan itu sehat!</strong> Otak melepas dopamin lebih banyak saat reunian — makanya ketemu lagi setelah lama berasa lebih manis.<br><br>
+    💪 <strong>LDR melatih kepercayaan dan kemandirian</strong> — dua fondasi terkuat dalam hubungan jangka panjang.<br><br>
+    💑 <strong>Penelitian Cornell University</strong> menemukan pasangan LDR memiliki tingkat kepuasan hubungan yang setara bahkan lebih tinggi dari yang berdekatan.<br><br>
+    <em>Jadi kita bukan LDR yang lemah — kita LDR yang kuat! 💪✨</em>`
+  },
+  horoscope:{
+    emoji:'🔮',title:'Ramalan Cinta Kita!',
+    text:`🌟 <strong>Ramalan Hari Ini:</strong><br><br>
+    Bintang-bintang berkata bahwa dua jiwa yang dipisah jarak sedang dalam perjalanan menuju penyatuan yang indah. Jupiter merestui komitmen kalian, Venus memperindah rasa cinta yang tumbuh hari demi hari.<br><br>
+    ❤️ Kecocokan: <strong>99.9%</strong> (0.1% sisanya karena kamu terlalu sempurna dan itu bikin aku nervous 😅)<br><br>
+    ✨ Prediksi: <strong>Pertemuan berikutnya akan lebih indah dari sebelumnya</strong><br><br>
+    🌙 Pesan dari bintang: <em>"Terus pegang tangannya meski hanya virtual — karena tangan itu yang akan kamu pegang selamanya."</em> 💕`
+  },
+  memory:{
+    emoji:'🎞️',title:'Kenangan LDR Terbaik Kita!',
+    text:`Hal-hal kecil yang akan selalu aku inget:<br><br>
+    🌙 <strong>Video call tengah malam</strong> sampai salah satu dari kita ketiduran duluan<br>
+    ☀️ <strong>Good morning text pertama</strong> yang bikin hari aku langsung cerah<br>
+    😂 <strong>Jokes random</strong> yang kita kirim tengah-tengah hari karena inget satu sama lain<br>
+    🎵 <strong>Lagu yang kita dedikasikan</strong> satu sama lain<br>
+    🥺 <strong>"Aku kangen kamu"</strong> — tiga kata yang paling aku tunggu dan paling bikin hati hangat<br>
+    📦 <strong>Niat kirim-kiriman hadiah</strong> karena mau bikin yang satu lagi bahagia<br>
+    🌟 <strong>Semua doa-doa kecil</strong> yang aku kirimkan untukmu setiap malamnya<br><br>
+    <em>Ini semua bukan kenangan biasa. Ini bukti cinta kita nyata. 💕</em>`
+  }
+};
+
+function openModal(key){
+  const m=modals[key];
+  document.getElementById('modalEmoji').textContent=m.emoji;
+  document.getElementById('modalTitle').textContent=m.title;
+  document.getElementById('modalText').innerHTML=m.text;
+  document.getElementById('modalOverlay').classList.add('open');
+  twemoji.parse(document.getElementById('modalOverlay'));
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
+function closeModalIf(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+
+// COUNTDOWN
+let meetDate=null;
+function setMeetDate(){
+  const val=document.getElementById('meetDateInput').value;
+  if(!val)return;
+  meetDate=new Date(val);
+  try{localStorage.setItem('meetDate',val);}catch(e){}
+  document.getElementById('meetDateLabel').textContent=meetDate.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+  closeModal();
+}
+function loadMeetDate(){
+  try{
+    const s=localStorage.getItem('meetDate');
+    if(s){meetDate=new Date(s);document.getElementById('meetDateLabel').textContent=meetDate.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});}
+  }catch(e){}
+}
+function updateCountdown(){
+  if(!meetDate){return;}
+  const diff=meetDate-new Date();
+  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='🎉');return;}
+  document.getElementById('cd-d').textContent=Math.floor(diff/86400000);
+  document.getElementById('cd-h').textContent=Math.floor((diff%86400000)/3600000);
+  document.getElementById('cd-m').textContent=Math.floor((diff%3600000)/60000);
+  document.getElementById('cd-s').textContent=Math.floor((diff%60000)/1000);
+}
+loadMeetDate();updateCountdown();setInterval(updateCountdown,1000);
+
+// CAROUSEL
+const track=document.getElementById('carouselTrack');
+const polaroids=track.querySelectorAll('.polaroid');
+const dotsEl=document.getElementById('dotsContainer');
+let carouselIndex=0,autoSlideTimer;
+function getVisible(){const w=window.innerWidth;if(w<500)return 1;if(w<700)return 2;return 3;}
+function initCarousel(){
+  dotsEl.innerHTML='';
+  const max=Math.max(0,polaroids.length-getVisible());
+  for(let i=0;i<=max;i++){const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d);}
+  goTo(Math.min(carouselIndex,max));
+}
+function goTo(i){
+  const max=Math.max(0,polaroids.length-getVisible());
+  carouselIndex=Math.max(0,Math.min(i,max));
+  track.style.transform=`translateX(-${carouselIndex*(polaroids[0].offsetWidth+16)}px)`;
+  dotsEl.querySelectorAll('.dot').forEach((d,idx)=>d.classList.toggle('active',idx===carouselIndex));
+  clearInterval(autoSlideTimer);autoSlideTimer=setInterval(()=>moveCarousel(1),4000);
+}
+function moveCarousel(dir){const max=Math.max(0,polaroids.length-getVisible());goTo(carouselIndex+dir<0?max:carouselIndex+dir>max?0:carouselIndex+dir);}
+window.addEventListener('resize',initCarousel);initCarousel();
+let tStartX=0;
+track.addEventListener('touchstart',e=>{tStartX=e.touches[0].clientX;},{passive:true});
+track.addEventListener('touchend',e=>{const d=tStartX-e.changedTouches[0].clientX;if(Math.abs(d)>40)moveCarousel(d>0?1:-1);});
+
+// =============================================
+// MUSIK — ganti nama file sesuai MP3 kamu
+// Taruh semua file .mp3 di folder: audio/
+// =============================================
+const tracks = [
+  { emoji:'🌙', name:'Favorite Girl',  artist:'Justin Bieber', src:'audio/lagu1.mp3' },
+  { emoji:'✈️', name:'1000x',  artist:'Ghea Indrawari', src:'audio/lagu2.mp3' },
+  { emoji:'💌', name:'Pervect',  artist:'Ed Sheeran', src:'audio/lagu3.mp3' },
+  { emoji:'🌹', name:'Sempurna',  artist:'Andra And The Backbone', src:'audio/lagu4.mp3' },
+  { emoji:'💕', name:'Kota Ini Tak Sama Tanpamu',  artist:'Nadhif Basalamah', src:'audio/lagu5.mp3' },
+];
+
+let curTrack = 0;
+let isPlaying = false;
+const audio = new Audio();
+audio.volume = 0.7;
+
+// Auto play next when track ends
+audio.addEventListener('ended', () => nextTrack());
+
+// Update progress bar while playing
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  const pct = (audio.currentTime / audio.duration) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('timeNow').textContent = fmtTime(audio.currentTime);
+  document.getElementById('timeEnd').textContent = fmtTime(audio.duration);
+});
+
+// Show error if file not found
+audio.addEventListener('error', () => {
+  document.getElementById('trackName').textContent = 'File tidak ditemukan 😢';
+  document.getElementById('trackArtist').textContent = 'Cek nama file di folder audio/';
+  document.getElementById('playBtn').textContent = '▶';
+  document.getElementById('albumArt').classList.remove('playing');
+  isPlaying = false;
+});
+
+function fmtTime(s) {
+  if (isNaN(s)) return '0:00';
+  s = Math.floor(s);
+  return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+}
+
+function updateTrackUI(i) {
+  const t = tracks[i];
+  document.getElementById('trackName').textContent = t.name;
+  document.getElementById('trackArtist').textContent = t.artist;
+  document.getElementById('albumArt').textContent = t.emoji;
+  twemoji.parse(document.getElementById('albumArt'));
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('timeNow').textContent = '0:00';
+  document.getElementById('timeEnd').textContent = '0:00';
+  document.querySelectorAll('.playlist-item').forEach((el, idx) =>
+    el.classList.toggle('active', idx === i)
+  );
+}
+
+function loadTrack(i) {
+  updateTrackUI(i);
+  audio.src = tracks[i].src;
+  audio.load();
+  audio.play().then(() => {
+    isPlaying = true;
+    document.getElementById('playBtn').textContent = '⏸';
+    document.getElementById('albumArt').classList.add('playing');
+  }).catch(() => {
+    // Browser requires user interaction first — sudah ter-handle
+  });
+}
+
+function togglePlay() {
+  if (!audio.src || audio.src === window.location.href) {
+    loadTrack(curTrack);
+    return;
+  }
+  if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+    document.getElementById('playBtn').textContent = '▶';
+    document.getElementById('albumArt').classList.remove('playing');
+  } else {
+    audio.play().then(() => {
+      isPlaying = true;
+      document.getElementById('playBtn').textContent = '⏸';
+      document.getElementById('albumArt').classList.add('playing');
+    });
+  }
+}
+
+function nextTrack() {
+  curTrack = (curTrack + 1) % tracks.length;
+  loadTrack(curTrack);
+}
+
+function prevTrack() {
+  // Kalau sudah > 3 detik, restart lagu. Kalau belum, ke lagu sebelumnya
+  if (audio.currentTime > 3) {
+    audio.currentTime = 0;
+  } else {
+    curTrack = (curTrack - 1 + tracks.length) % tracks.length;
+    loadTrack(curTrack);
+  }
+}
+
+function setVolume(v) {
+  audio.volume = v;
+}
+
+function seekTrack(e) {
+  if (!audio.duration) return;
+  const pct = e.offsetX / e.currentTarget.offsetWidth;
+  audio.currentTime = pct * audio.duration;
+}
+
+function buildPlaylist() {
+  const pl = document.getElementById('playlistEl');
+  pl.innerHTML = '';
+  tracks.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.className = 'playlist-item' + (i === curTrack ? ' active' : '');
+    li.innerHTML = `
+      <div class="pl-num">${i + 1}</div>
+      <div class="pl-emoji">${t.emoji}</div>
+      <div class="pl-info">
+        <div class="pl-track">${t.name}</div>
+        <div class="pl-artist">${t.artist}</div>
+      </div>
+      <div class="pl-dur">🎵</div>`;
+    li.onclick = () => { curTrack = i; loadTrack(i); };
+    pl.appendChild(li);
+  });
+  twemoji.parse(pl);
+}
+
+buildPlaylist();
+updateTrackUI(0);
+
+// =============================================
+// TWEMOJI — parse seluruh halaman setelah load
+// =============================================
+twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+</script>
+</body>
+</html>
